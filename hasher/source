@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Generate sha1 hash of a string
+
+main() {
+  if [ -z "$1" ]; then
+    echo "No argument provided."
+    exit 1
+  fi
+  echo -n "$1" | sha1sum | awk '{print $1}'
+}
+
+main "$1"
